@@ -16,7 +16,7 @@
  *  -----------------------------------------------------------------------
  * Author       : 焱铭
  * Date         : 2023-08-19 21:10:07 +0800
- * LastEditTime : 2023-08-19 21:30:26 +0800
+ * LastEditTime : 2023-08-19 21:33:24 +0800
  * Github       : https://github.com/YanMing-lxb/
  * FilePath     : \YM-CV-Template\README.md
  * Description  : 
@@ -25,6 +25,14 @@
 
 # YM-CV-Template
 一个LaTeX简历模板
+
+## 使用方法
+
+### 本地部署写作
+
+1. 编译该模板请使用 XeLaTeX 引擎。
+
+2. 本地部署LaTeX环境请转到[YM VSCode Configurations for LaTeX](https://github.com/YanMing-lxb/YM-VSCode-Configurations-for-LaTeX)项目
 
 ## CV 跟 resume 都叫简历，到底有什么差别？
 此处内容来自[Melo英语](https://baijiahao.baidu.com/s?id=1764966539792172816&wfr=spider&for=pc)
@@ -107,4 +115,9 @@ CV和Résumé最大的区别，就是不受长度限制。教育背景和职场�
 1. No Photos
 
 现在，英国的CV里也不需要包含个人照片了。
+
+## 软件许可证
+各高校校徽图片的版权归各高校所有。
+
+其他部分使用 [LPPL](https://www.latex-project.org/lppl/) 授权。
 
