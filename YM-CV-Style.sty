@@ -1,0 +1,170 @@
+%
+%  =======================================================================
+%  ····Y88b···d88P················888b·····d888·d8b·······················
+%  ·····Y88b·d88P·················8888b···d8888·Y8P·······················
+%  ······Y88o88P··················88888b·d88888···························
+%  ·······Y888P··8888b···88888b···888Y88888P888·888·88888b·····d88b·······
+%  ········888······"88b·888·"88b·888·Y888P·888·888·888·"88b·d88P"88b·····
+%  ········888···d888888·888··888·888··Y8P··888·888·888··888·888··888·····
+%  ········888··888··888·888··888·888···"···888·888·888··888·Y88b·888·····
+%  ········888··"Y888888·888··888·888·······888·888·888··888··"Y88888·····
+%  ·······························································888·····
+%  ··························································Y8b·d88P·····
+%  ···························································"Y88P"······
+%  =======================================================================
+% 
+%  -----------------------------------------------------------------------
+% Author       : 焱铭
+% Date         : 2023-08-09 09:21:06 +0800
+% LastEditTime : 2023-08-19 21:16:49 +0800
+% Github       : https://github.com/YanMing-lxb/
+% FilePath     : \YM-CV-Template\YM-CV-Style.sty
+% Description  : 简历的样式文件
+%  -----------------------------------------------------------------------
+%
+
+% YM-CV-Style.sty
+
+\usepackage{latexsym}            % 提供了一些额外的LaTeX符号
+\usepackage{xcolor}              % 支持使用颜色
+\usepackage{float}               % 提供浮动体的支持，如图表
+\usepackage{ragged2e}            % 提供了更多的段落对齐选项
+\usepackage[empty]{fullpage}     % 设置页面为空白，没有页眉和页脚
+\usepackage{wrapfig}             % 允许在文本周围插入浮动的图形
+\usepackage{tabularx}            % 提供了可调整宽度的表格环境
+\usepackage{titlesec}            % 提供了自定义章节标题的功能
+\usepackage{geometry}            % 设置页边距和页面尺寸
+\usepackage{marvosym}            % 提供了一些特殊符号
+\usepackage{verbatim}            % 提供了多行注释的功能
+\usepackage{enumitem}            % 提供了自定义列表环境的功能
+\usepackage[hidelinks]{hyperref} % 支持超链接，并隐藏链接的边框
+\usepackage{fancyhdr}            % 提供了自定义页眉和页脚的功能
+\usepackage{multicol}            % 提供了多栏排版的功能
+\usepackage{multirow}            % 提供了跨行合并的表格功能
+\usepackage{graphicx}            % 支持插入图像
+\usepackage{cfr-lm}              % 提供了更多的字体选项
+\usepackage[T1]{fontenc}         % 设置字体编码为T1，支持更多字符
+\usepackage{fontawesome5}        % 添加图标字体
+\usepackage{xeCJK}               % 提供了中文支持
+\usepackage[most]{tcolorbox}                                  % 提供了自定义彩色盒子的功能
+
+
+\tcbset{
+    frame code={},                      % 设置盒子的边框样式
+    center title,                       % 设置盒子标题居中
+    left=0pt,                           % 设置盒子左边距为0pt
+    right=0pt,                          % 设置盒子右边距为0pt
+    top=0pt,                            % 设置盒子上边距为0pt
+    bottom=0pt,                         % 设置盒子下边距为0pt
+    colback=gray!20,                    % 设置盒子的背景颜色为灰色
+    colframe=white,                     % 设置盒子的边框颜色为白色
+    width=\dimexpr\textwidth\relax,     % 设置盒子的宽度为文本宽度
+    enlarge left by=-2mm,               % 在左侧增加2mm的额外空白
+    boxsep=4pt,                         % 设置盒子内部内容与边框的距离为4pt
+    arc=0pt,outer arc=0pt,              % 设置盒子的圆角半径为0pt
+}
+
+\geometry{left=0.6cm, top=0.5cm, right=0.6cm, bottom=0.5cm}   % 设置页面的左、上、右、下边距
+
+\setmainfont{Times New Roman}                                 % 设置主要字体为Times New Roman
+\setCJKmainfont[AutoFakeBold=true,AutoFakeSlant=true]{SimSun} % 设置中文字体为宋体，支持伪粗体和伪斜体
+
+\setlength{\multicolsep}{0pt}                                 % 设置多栏之间的间距为0pt
+
+
+
+\urlstyle{same}             % 设置链接样式为与正文相同
+
+\raggedright                % 设置文本左对齐
+\setlength{\tabcolsep}{0in} % 设置表格列间距为0
+
+
+
+
+
+% ============================================= 节样式设置 ============================================
+
+\titleformat{\section} % 设置section标题的格式
+{\vspace{-4pt}\raggedright\large\bfseries} % 调整标题的垂直间距，左对齐，字体为大号加粗
+{}                                         % 章节标记，   $bullet$ 是点标记
+{0em}                                      % 前缩进
+{}                                         % 标题前添加文字 % 后面加[]可添加文字或符号
+[\color{black}\titlerule \vspace{-7pt}]    % 设置标题与正文之间的水平分隔线和垂直间距
+
+
+
+
+% ============================================= 自定义表格 ============================================
+
+\newcommand{\resumePOR}[3]{ % 定义一个自定义命令，用于创建项目经历的条目
+    \vspace{0.5mm}\item % 调整垂直间距
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r} % 创建一个表格，设置列宽和对齐方式
+        \textbf{#1},\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm} % 调整垂直间距
+}
+
+\newcommand{\resumeSubheading}[4]{ % 定义一个自定义命令，用于创建教育经历或工作经历的条目
+    \vspace{0.5mm}\item % 调整垂直间距
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r} % 创建一个表格，设置列宽和对齐方式
+        \textbf{#1} & \textit{\footnotesize{#2}} \\ 
+        & \textbf{\footnotesize{#3}} \\ % 同上
+        \multicolumn{2}{p{0.98\linewidth}}{\footnotesize{#4}} % 同上
+    \end{tabular*}
+    \vspace{-2.4mm} % 调整垂直间距
+}
+
+\newcommand{\resumeProject}[3]{ % 定义一个自定义命令，用于创建项目经验的条目
+    \vspace{0.5mm}\item % 调整垂直间距
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r} % 创建一个表格，设置列宽和对齐方式
+        \textbf{#1} & \textit{\footnotesize{#2}} \\ 
+        & \textbf{\footnotesize{#3}} 
+    \end{tabular*}
+    \vspace{-2.4mm} % 调整垂直间距
+}
+
+\newcommand{\resumeResearchResults}[2]{ % 定义一个自定义命令，用于创建研究成果的条目
+    \vspace{0.5mm}\item % 调整垂直间距
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r} % 创建一个表格，设置列宽和对齐方式
+        \textbf{#1} & \textit{\footnotesize{#2}} \\
+    \end{tabular*}
+    \vspace{-2.4mm} % 调整垂直间距
+}
+
+
+% ============================================= 自定义列表 ============================================
+
+\newcommand{\resumeSubItem}[2]{\item{\textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}}} % 定义一个自定义命令，用于创建子项目的条目
+% \renewcommand{\labelitemii}{$\circ$} % 定义了第二层项目符号为圆圈（∘）
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$} % 重新定义第一层项目符号为小圆点
+
+% 定义一个自定义命令，用于开始子项目列表
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+
+% 定义一个自定义命令，用于开始技能列表
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]} 
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+
+% 定义一个自定义命令，用于开始研究成果列表
+\newcommand{\resumeResearchResultsListStart}{\begin{enumerate}[align=left,labelsep=-2mm,label={[\arabic*]}]} 
+\newcommand{\resumeResearchResultsListEnd}{\end{enumerate}\vspace{-2mm}}
+
+% 定义一个自定义命令，用于开始项目列表
+\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small} 
+\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}\vspace{-2mm}}
+
+
+% ============================================= 自定义章节标题 ============================================
+\newcommand{\cvsection}[1]{ % 定义一个自定义命令，用于创建简历章节标题
+    \vspace{2mm}            % 添加垂直间距
+    \begin{tcolorbox}       % 创建一个带有背景颜色的盒子
+        \textbf{\large #1}  % 设置标题文本样式和内容
+    \end{tcolorbox}
+    \vspace{-4mm}           % 添加负值垂直间距，调整与下方内容的间距
+}
+
+% ============================================= 自定义表格列类型 ============================================
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}   % 定义一个新的表格列类型，用于左对齐
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}    % 定义一个新的表格列类型，用于右对齐
+\newcolumntype{C}{>{\centering\arraybackslash}X}     % 定义一个新的表格列类型，用于居中对齐
